@@ -1,0 +1,145 @@
+* {
+    font-family: 微軟正黑體;
+    /* color: #eee; */
+    /* border: 1px solid #000; */
+}
+
+body {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.navbar{
+    background-color: #444;
+}
+.navbar a{
+    color: #eee;
+    margin: 0px 5px;
+    font-weight: 900;
+}
+
+.navbar a:hover{
+    color: #f9cc54;            
+}
+
+.navbar a:focus{
+    color: #f9cc54;
+}
+
+.board h2 {
+    margin-top: 50px;
+}
+.open{
+    margin-top: 50px;
+}        
+
+.top {
+    margin: 10px 20px;    
+}
+
+.top img {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+    transition: 0.5s;
+}
+
+.top img:before{
+    content: '11111111111111111111111111111111';
+    display: block;
+    /* background-color: rgba(0, 0, 0,0.4); */
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 5;
+}
+
+.top img:hover{    
+    transform: scale(1.1);
+}
+
+.top h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+.top h4{
+    font-size: 16px;
+    text-align: center;
+}
+
+.notice{
+    text-align: center;
+    border-top: 2px solid rgba(255, 156, 80,0.6);
+    margin-top: 50px;
+}
+.notice p{
+    margin: 0;
+    margin-top: 5px;
+}
+
+#board .name,.number{
+    margin-top: 10px;
+    padding: 0;
+}
+#board .name{
+    font-size: 24px;
+    font-weight: 900;
+    background: linear-gradient(#e60012,#fff100,#f38c05);  /*要寫在bg-clip之前*/
+    background-clip: text;
+    -webkit-background-clip: text;    
+    color: transparent;
+}
+
+#movielist .selectBtn{
+    display: inline-block;
+    width: 230px;
+    font-weight: 900;
+}
+
+#movielist button{
+    font-weight: 900;
+    margin: 5px;
+    background: linear-gradient(#aa7322,#f9f2ae);
+    background-clip: text;
+    color: transparent;    
+    border-radius: 8px 0px 8px 0px;
+}
+
+#movielist img{
+    width: 100%;
+}
+
+#movielist .detail{
+    position: relative;
+    margin-top: 10px;
+}
+
+#movielist .detail .song i{
+    position: absolute;
+    top:15px;
+    left: 250px;
+    color: #fff64f;
+    transition: 0.3s;
+}
+
+#movielist .detail .song i:hover{
+    color: rgba(255,246,79,0.6);
+    transform: scale(0.8);
+}
+
+#movielist .detail .publicity i{
+    position: absolute;
+    top:15px;
+    left: 330px;
+    transition: 0.3s;
+    color:rgb(255, 156, 80)
+}
+
+#movielist .detail .publicity i:hover{
+    transform: translate(5px,0px);
+    color:rgba(255, 156, 80,0.6)
+}

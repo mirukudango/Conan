@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名偵探柯南劇場版小檔案</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">    
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">柯南劇場版小檔案</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#conannavbar"
+                aria-controls="conannavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="conannavbar">
+                <div class="navbar-nav">                    
+                    <a class="nav-link" href="#movielist">劇場版介紹</a>
+                    <a class="nav-link" href="#">特別篇介紹</a>
+                    <a class="nav-link" href="#">小遊戲</a>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+    <header>
+        <div class="container">
+            <div class="row open">                
+                <img src="./image/conan_PARTY_PC.png">
+            </div>
+        </div>
+    </header>
+    <div id="board">
+        <div class="container">
+            <div class="row">
+                <div class="board col-md-10">
+                    <h2>票房排行</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="top col-md-3 col-sm-2 col-xxl-2" v-for="(data,id) in topFivedata">
+                    <h3>TOP{{id+=1}}</h3>
+                    <img :src="data.movie_poster">
+                    <h4 class="name">{{data.movie_name}}</h4>
+                    <h4 class="number">日本票房：{{data.boxOffice_Jp}}億日圓</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="movielist">
+        <div class="container">
+            <div class="row">
+                <div class="selectBtn" v-for="(item,id) in datalist">
+                    <button class="movieBtn" @click="selectedId = id">{{id+1}}. {{item.movie_name}}</button>
+                </div>
+            </div>
+            <div class="list list1">
+                <div class="row introduction" v-for="(item,id) in datalist" :key="item.id" v-show="selectedId === id">
+                    <div class="col-md-4 col-sm-4 col-xxl-4">
+                        <img class="movie_poster" :src="item.movie_poster">
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xxl-8 detail">
+                        <div class="title_Tw">{{item.movie_name}}</div>
+                        <div class="title_Jp">{{item.movie_name_Jp}}</div>
+                        <div class="comeOut_date_jp">日本上映：{{item.comeOut_date_Jp}}</div>
+                        <div class="comeOut_date_tw">台灣上映：{{item.comeOut_date_Tw}}</div>
+                        <div class="boxOffice">日本票房：{{item.boxOffice_Jp}}億日圓</div>
+                        <div class="director">導演：{{item.director}}</div>
+                        <div class="screenwriter">編劇：{{item.screenwriter}}</div>
+                        <div class="info">劇情簡介：<br />
+                            <div class="infoText">{{item.intro}}</div>
+                        </div>
+                        <div class="song"><a :href="item.themeSong" target="_blank" :title=item.themesongTitle><i class="fa-solid fa-music fa-xl"></i></a></div>
+                        <div class="publicity"><a :href="item.notice" target="_blank" title="預告片"><i class="fa-solid fa-forward fa-xl"></i></a></div>                        
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="notice col-md-4">
+                    <p>本站資源皆源自網路</p>
+                    <p>僅作為學習，分享用途</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/71dc78c49e.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>    
+</body>
+
+</html>
